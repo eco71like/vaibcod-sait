@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+.env
+.env.*
+
+# local drafts, not part of the site
+src/
+"SKILL (1).md"
+"import { useEffect, useRef } from 'react.jsx"
