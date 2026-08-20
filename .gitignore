@@ -1,14 +1,24 @@
+# dependencies / build
 node_modules/
 dist/
+
+# OS / editor
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
 *.log
+
+# secrets
 .env
 .env.*
 
-# local drafts, not part of the site
+# local drafts (not part of the published site)
 src/
-"SKILL (1).md"
-"import { useEffect, useRef } from 'react.jsx"
+SKILL (1).md
+import { useEffect, useRef } from 'react.jsx
+*.tmp
+ChatGPT Image*.png
+2bebec*.jpg
+f467f9*.jpg
+snapedit_*.jpg

@@ -2,37 +2,48 @@
 
 Одностраничный сайт-портфолио: сайты, интерфейсы и digital-проекты.
 
-## Локальный запуск
+## Структура
 
-Открой `index.html` в браузере. Сборки и Node.js не нужны.
+```
+├── index.html          # разметка
+├── styles.css          # стили
+├── script.js           # анимации и интеракции
+├── assets/
+│   └── portrait.jpg    # фото на первом экране
+├── README.md
+└── .gitignore
+```
 
-Либо из папки проекта:
+## Запуск локально
+
+Открой `index.html` в браузере — сборка не нужна.
+
+Или через локальный сервер:
 
 ```bash
 npx --yes serve .
 ```
 
-## Что внутри
+## Возможности
 
-- `index.html` — разметка
-- `styles.css` — оформление
-- `script.js` — анимации героя, BounceCards и микроинтеракции
-- `snapedit_1744028607243.jpg` — фото на первом экране
+- hero с портретом и WebGL-нитями
+- появление заголовка по буквам
+- BounceCards в блоке проектов (GSAP)
+- параллакс, tilt-карточки, магнитные кнопки
+- контакты: Telegram и VK
 
-## Загрузка на GitHub
+## Публикация на GitHub
 
-1. Создай новый репозиторий на [github.com/new](https://github.com/new) без README.
-2. В этой папке выполни:
+1. Создай пустой репозиторий на [github.com/new](https://github.com/new) (без README).
+2. В папке проекта:
 
 ```bash
 git remote add origin https://github.com/USERNAME/vibe-coder-portfolio.git
 git push -u origin main
 ```
 
-Подставь свой логин и имя репозитория.
-
 ## GitHub Pages
 
-Settings → Pages → Deploy from a branch → `main` / root.
+**Settings → Pages → Deploy from a branch → `main` / `/ (root)`**
 
-Сайт откроется по адресу `https://USERNAME.github.io/vibe-coder-portfolio/`.
+Сайт: `https://USERNAME.github.io/vibe-coder-portfolio/`

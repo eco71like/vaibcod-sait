@@ -1,15 +1,17 @@
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 const progress = document.getElementById("progress");
-window.addEventListener(
-  "scroll",
-  () => {
-    const max = document.documentElement.scrollHeight - window.innerHeight;
-    const value = max > 0 ? window.scrollY / max : 0;
-    progress.style.width = `${value * 100}%`;
-  },
-  { passive: true }
-);
+if (progress) {
+  window.addEventListener(
+    "scroll",
+    () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const value = max > 0 ? window.scrollY / max : 0;
+      progress.style.width = `${value * 100}%`;
+    },
+    { passive: true }
+  );
+}
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -219,7 +221,6 @@ function initThreads(container) {
   const mouse = [0.5, 0.5];
   const target = [0.5, 0.5];
   let visible = true;
-  let raf = 0;
 
   function resize() {
     const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
@@ -253,7 +254,7 @@ function initThreads(container) {
   io.observe(container);
 
   function frame(t) {
-    raf = requestAnimationFrame(frame);
+    requestAnimationFrame(frame);
     if (!visible || document.hidden) return;
     mouse[0] += 0.05 * (target[0] - mouse[0]);
     mouse[1] += 0.05 * (target[1] - mouse[1]);
@@ -263,7 +264,7 @@ function initThreads(container) {
     gl.drawArrays(gl.TRIANGLES, 0, 3);
   }
 
-  raf = requestAnimationFrame(frame);
+  requestAnimationFrame(frame);
 }
 
 initThreads(document.getElementById("threads"));
